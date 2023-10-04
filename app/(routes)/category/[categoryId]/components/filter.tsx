@@ -2,7 +2,6 @@
 
 import qs from "query-string";
 import { useRouter, useSearchParams } from "next/navigation";
-
 import Button from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Color, Size } from "@/types";
@@ -20,7 +19,6 @@ const Filter: React.FC<FilterProps> = ({
 }) => {
   const searchParams = useSearchParams();
   const router = useRouter();
-
   const selectedValue = searchParams.get(valueKey);
   
   const onClick = (id: string) => {
@@ -34,7 +32,6 @@ const Filter: React.FC<FilterProps> = ({
     if (current[valueKey] === id) {
       query[valueKey] = null;
     }
-
     const url = qs.stringifyUrl({
       url: window.location.href,
       query,
