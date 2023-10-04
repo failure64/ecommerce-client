@@ -1,5 +1,4 @@
 import { create } from 'zustand';
-
 import { Product } from '@/types';
 
 interface PreviewModalStore {
@@ -14,6 +13,7 @@ const usePreviewModal = create<PreviewModalStore>((set) => ({
   data: undefined,
   onOpen: (data: Product) => set({ isOpen: true, data }),
   onClose: () => set({ isOpen: false }),
-}));
+}
+))
 
 export default usePreviewModal;
